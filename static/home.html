@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+	<body>
+
+		<center>
+			<header> <h1> Home </h1> </header></center>
+		<br> <br>
+		<h2> Assignment 3 - Memcache</h2>
+		<br>
+=========================================================================================================================
+    <br>
+	<form action="/createtable" method="post" enctype="multipart/form-data">
+        <strong>Create table from csv</strong>
+        <input type="submit" value="Create">
+     </form>
+        <p>{{msg}}</p>
+        <p>Time Taken :{{timediff}}</p>
+
+    <br>
+
+==============================================================================================================================
+     <p>Search for details based on region</p>
+      <form action="{{url_for('Region')}}" method="POST" enctype="multipart/form-data">
+         <input type="text" value="" name="Region" placeholder="Enter Region">
+         <input type="submit" value="Find">
+       </form>
+		 <p> Number </p>
+		 <p>Time Taken :{{timediff}}</p>
+       <table border = 1>
+         <thead>
+
+            <td>Region</td>
+            <td>Division</td>
+            <td>State</td>
+            <td>State Name</td>
+            <td>Pop in 2001</td>
+         </thead>
+         {% for row in rows %}
+
+         <tr>
+            <td>{{row["REGION"]}}</td>
+            <td>{{row["DIVISION"]}}</td>
+            <td>{{row["STATE"]}}</td>
+            <td>{{row["STNAME"]}}</td>
+            <td>{{row["POPESTIMATE2001"]}}</td>
+		 </tr>
+		   {% endfor %}
+         </table>
+
+
+==============================================================================================================================
+
+	</body>
+</html>
